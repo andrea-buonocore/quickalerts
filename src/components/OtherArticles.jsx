@@ -35,7 +35,7 @@ const OtherArticles = () => {
                                     {
                                         article.keywords.slice(0,3).map((keyword, index) => {
                                             return (
-                                                <span key={index} className="text-xs p-2 mr-1 mb-1 bg-slate-500 rounded-full text-slate-200 capitalize">{keyword}</span>
+                                                <span key={index} className="text-xs p-2 mr-1 mb-1 bg-slate-700 rounded-full text-slate-200 capitalize">{keyword}</span>
                                             )
                                         })
                                     }
