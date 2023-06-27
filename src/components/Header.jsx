@@ -7,16 +7,19 @@ const Header = () => {
 
     const [sidebar, setSidebar] = useState(false);
 
-    const showSidebar = () => {setSidebar(!sidebar)}
+    const showSidebar = () => { setSidebar(!sidebar) }
 
     return (
         <div className="flex justify-between items-center p-10 bg-transparent relative">
             <Link to={'/'}>
                 <span className="font-semibold text-2xl">QuickAlerts</span>
             </Link>
-            <AiOutlineMenu size={20} className="cursor-pointer" onClick={() => {showSidebar()}}/>
-            
-            <Sidebar />
+            <AiOutlineMenu size={20} className="cursor-pointer" onClick={() => { showSidebar() }} />
+            {
+                sidebar && (
+                    <Sidebar />
+                )
+            }
         </div>
     )
 }
