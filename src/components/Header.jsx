@@ -22,18 +22,24 @@ const Header = () => {
                 <div className="flex justify-end">
                     <AiOutlineClose size={20} className="mb-5 cursor-pointer" onClick={handleNav} />
                 </div>
-                <div className="flex items-center mb-4 p-5">
-                    <AiOutlineHeart size={20} className="mr-3" />
-                    <p className="text-black z-10">Saved</p>
-                </div>
-                <div className="flex items-center mb-4 p-5">
-                    <BiCategoryAlt size={20} className="mr-3" />
-                    <span className="text-black z-10">Change Category</span>
-                </div>
-                <div className="flex items-center mb-4 p-5">
-                    <GrLanguage size={20} className="mr-3" />
-                    <span className="text-black z-10">Change Language</span>
-                </div>
+                <Link to={'/saved'}>
+                    <div className="flex items-center mb-4 p-5">
+                        <AiOutlineHeart size={20} className="mr-3" />
+                        <p className="text-black z-10">Saved</p>
+                    </div>
+                </Link>
+                <Link to={'/category'}>
+                    <div className="flex items-center mb-4 p-5">
+                        <BiCategoryAlt size={20} className="mr-3" />
+                        <span className="text-black z-10">Change Category</span>
+                    </div>
+                </Link>
+                <Link to={'/lang'}>
+                    <div className="flex items-center mb-4 p-5">
+                        <GrLanguage size={20} className="mr-3" />
+                        <span className="text-black z-10">Change Language</span>
+                    </div>
+                </Link>
             </nav>
         </div>
     )

@@ -2,6 +2,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import MainContainer from "./components/MainContainer";
 import Article from "./components/Article";
+import SavedArticles from "./components/SavedArticles";
+import Category from "./components/Category";
+import Lang from "./components/Lang";
 
 function App() {
   return (
@@ -11,6 +14,11 @@ function App() {
         <Routes>
           <Route path="/" element={<MainContainer />} />
           <Route path="/article" element={<Article />} />
+          <Route path="/saved" element={<SavedArticles />} />
+          <Route path="/category" element={<Category />} />
+          <Route path="/lang" element={<Lang />} />
+          
+          
         </Routes>
       </BrowserRouter>
     </div>
