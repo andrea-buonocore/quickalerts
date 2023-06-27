@@ -5,14 +5,10 @@ import { AiOutlineClose } from "react-icons/ai";
 
 const Sidebar = () => {
 
-    const closeSidebar = () => {
-
-    }
-
     return (
-        <nav className="absolute top-0 right-0 transition-all bg-white border w-[30%] h-screen p-10 z-10">
+        <nav className="absolute top-0 right-0 bg-white border w-[70%] lg:w-[30%] h-screen p-10 z-10">
             <div className="flex justify-end">
-                <AiOutlineClose size={20} className="mb-5" onClick={() => { closeSidebar() }} />
+                <AiOutlineClose size={20} className="mb-5 cursor-pointer"/>
             </div>
             <div className="flex items-center mb-4 border p-5">
                 <AiOutlineHeart size={20} className="mr-3" />
