@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import store from "./redux/store"
 import Settings from "./components/Settings";
 import Welcome from "./components/Welcome";
+import Header from "./components/Header";
 
 
 function App() {

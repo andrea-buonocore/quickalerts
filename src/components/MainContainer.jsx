@@ -5,7 +5,7 @@ import OtherArticles from "./OtherArticles";
 const MainContainer = () => {
     return (
         <>
-            <Header />
+            <Header/>
             <div className="w-full">
                 <div className="grid sm:grid-cols-1 lg:grid-cols-2">
                     <MainArticle />
