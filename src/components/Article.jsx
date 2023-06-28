@@ -36,12 +36,13 @@ const Article = ({ article }) => {
                 }
             </div>
             <div>
-                <img src={article.urlToImage} alt="article" className="w-full h-full object-cover" />
+                <img src={article.urlToImage} alt="article" className="w-full h-[120px] lg:h-[150px] object-cover" />
             </div>
 
             <div className="p-3 flex items-center col-span-2">
                 <a href={article.url} target="_blank" rel="noreferrer">
                     <h3 className="font-semibold mb-2 text-sm">{article.title}</h3>
+                    <p className="font-light text-xs hidden lg:block">{article.description}</p>
                 </a>
             </div>
         </div>
