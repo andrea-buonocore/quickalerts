@@ -29,6 +29,7 @@ const MainArticle = () => {
 
     return (
         <div className="w-full p-10">
+            <h2 className="mb-4 font-semibold text-2xl">Breaking News!</h2>
             {
                 article && (
                     <div className="shadow rounded-xl overflow-hidden relative">
