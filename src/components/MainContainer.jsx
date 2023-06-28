@@ -8,7 +8,7 @@ const MainContainer = () => {
         <div className="w-full">
             <div className="grid sm:grid-cols-1 lg:grid-cols-2">
                 <MainArticle />
-                {/* <OtherArticles /> */}
+                <OtherArticles />
             </div>
 
         </div>

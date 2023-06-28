@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const MainArticle = () => {
 
@@ -30,13 +31,15 @@ const MainArticle = () => {
         <div className="w-full relative p-10">
             {
                 article && (
-                    <div className="shadow rounded-xl overflow-hidden">
-                        <div className="p-3">
-                            <h2 className="font-semibold text-xl mb-4">{article.title}</h2>
-                            <p className="font-light text-xs">{article.description}</p>
+                    <Link>
+                        <div className="shadow rounded-xl overflow-hidden">
+                            <img src={article.urlToImage} alt="Article Image" className="w-full object-cover" />
+                            <div className="p-3">
+                                <h2 className="font-semibold text-xl mb-4">{article.title}</h2>
+                                <p className="font-light text-xs">{article.description}</p>
+                            </div>
                         </div>
-
-                    </div>
+                    </Link>
                 )
             }
         </div>
