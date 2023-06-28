@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const MainArticle = () => {
 
     const [article, setArticle] = useState(null);
     const [favorite, setFavorite] = useState(false);
     const dispatch = useDispatch();
+    const savedArticles = useSelector(state => state.saveArticle.saved);
+    console.log("saved articles", savedArticles)
 
     const getMainArticle = async () => {
         try {
@@ -40,7 +42,8 @@ const MainArticle = () => {
                     <div className="shadow rounded-xl overflow-hidden relative">
                         <div className="absolute top-2 right-2 bg-white p-3 rounded-full">
                             {
-                                favorite ?
+                                savedArticles.some(singleArticle => singleArticle.url === article.url)
+                                    ?
                                     <AiFillHeart size={20} className="hover:cursor-pointer" onClick={
                                         () => {
                                             toggleFavorite();
@@ -61,7 +64,7 @@ const MainArticle = () => {
                                     } />
                             }
                         </div>
-                        <img src={article.urlToImage} alt="Article Image" className="w-full object-cover" />
+                        <img src={article.urlToImage} alt="Article" className="w-full object-cover" />
                         <div className="p-3">
                             <a href={article.url} target="_blank" rel="noreferrer">
                                 <h2 className="font-semibold text-xl mb-4">{article.title}</h2>

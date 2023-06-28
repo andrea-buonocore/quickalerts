@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Article = ({ article }) => {
 
     const [favorite, setFavorite] = useState(false);
     const dispatch = useDispatch();
+    const selector = useSelector(state => state.saveArticle.saved);
 
     const toggleFavorite = () => { setFavorite(!favorite) };
 

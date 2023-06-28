@@ -22,19 +22,19 @@ const Header = () => {
                 <div className="absolute top-0 right-0 mb-5 p-10">
                     <AiOutlineClose size={20} className="cursor-pointer" onClick={handleNav} />
                 </div>
-                <Link to={'/saved'}>
+                <Link to={'/saved'} onClick={handleNav}>
                     <div className="flex items-center py-10 border flex items-center justify-center">
                         <AiOutlineHeart size={20} className="mr-3" />
                         <span className="text-black z-10">Saved</span>
                     </div>
                 </Link>
-                <Link to={'/category'}>
+                <Link to={'/category'} onClick={handleNav}>
                     <div className="flex items-center py-10 border flex items-center justify-center">
                         <BiCategoryAlt size={20} className="mr-3" />
                         <span className="text-black z-10">Change Category</span>
                     </div>
                 </Link>
-                <Link to={'/lang'}>
+                <Link to={'/lang'} onClick={handleNav}>
                     <div className="flex items-center py-10 border flex items-center justify-center">
                         <GrLanguage size={20} className="mr-3" />
                         <span className="text-black z-10">Change Language</span>
