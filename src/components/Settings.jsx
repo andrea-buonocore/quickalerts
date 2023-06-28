@@ -24,7 +24,7 @@ const Settings = () => {
     return (
         <>
             <Header />
-            <div className="p-10 lg:grid grid-cols-2">
+            <div className="p-10 lg:grid grid-cols-2 dark:bg-gray-800 dark:text-gray-100 h-screen">
                 <div className="mb-4">
                     <div className="flex mb-4 items-center">
                         <BiCategoryAlt size={20} className="mr-2"/>
@@ -32,7 +32,7 @@ const Settings = () => {
                     </div>
                     <form>
                         <label htmlFor="category" className="mr-4">Change category</label>
-                        <select name="category" id="category" onChange={handleCategoryChange} defaultValue={selectedCategory} className="border p-3 rounded-lg">
+                        <select name="category" id="category" onChange={handleCategoryChange} defaultValue={selectedCategory} className="border p-3 rounded-lg dark:text-gray-800">
                             <option value="business">Business</option>
                             <option value="entertainment">Entertainment</option>
                             <option value="general">General</option>
@@ -50,7 +50,7 @@ const Settings = () => {
                     </div>
                     <form>
                         <label htmlFor="country" className="mr-4">Change country</label>
-                        <select name="country" id="country" onChange={handleCountryChange} defaultValue={selectedCountry} className="border p-3 rounded-lg">
+                        <select name="country" id="country" onChange={handleCountryChange} defaultValue={selectedCountry} className="border p-3 rounded-lg dark:text-gray-800">
                             <option value="us">Unites States of America</option>
                             <option value="it">Italy</option>
                             <option value="fr">France</option>
