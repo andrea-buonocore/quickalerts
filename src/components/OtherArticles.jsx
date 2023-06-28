@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import Article from "./Article";
 
 const OtherArticles = () => {
 
-    const navigate = useNavigate();
     const [articles, setArticles] = useState(null);
+
 
     const getArticles = async () => {
         try {
@@ -20,6 +21,9 @@ const OtherArticles = () => {
         catch (e) { console.log(e) };
     }
 
+
+    
+
     useEffect(() => { getArticles() }, []);
 
     return (
@@ -28,21 +32,7 @@ const OtherArticles = () => {
             {
                 articles && (
                     articles.slice(1, articles.length).map((article, index) => {
-                        return (
-
-                            <div key={index} className="border rounded shadow mb-4 w-full grid grid-cols-3">
-                                <div>
-                                    <img src={article.urlToImage} alt="article image" className="w-full h-full object-cover" />
-                                </div>
-
-                                <div className="p-3 flex items-center col-span-2">
-                                    <a href={article.url} target="_blank" rel="noreferrer">
-                                        <h3 className="font-semibold mb-2 text-sm">{article.title}</h3>
-                                    </a>
-                                </div>
-                            </div>
-
-                        )
+                        return <Article key={index} article={article}/>
                     })
                 )
             }
