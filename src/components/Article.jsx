@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { useDispatch } from "react-redux";
 
 const Article = ({ article }) => {
 
     const [favorite, setFavorite] = useState(false);
+    const dispatch = useDispatch();
 
     const toggleFavorite = () => { setFavorite(!favorite) };
 
@@ -12,8 +14,24 @@ const Article = ({ article }) => {
             <div className="absolute top-0 right-0 bg-white p-2 rounded-full">
                 {
                     favorite ?
-                        <AiFillHeart size={20} className="hover:cursor-pointer" onClick={toggleFavorite} />
-                        : <AiOutlineHeart size={20} className="hover:cursor-pointer" onClick={toggleFavorite} />
+                        <AiFillHeart size={20} className="hover:cursor-pointer" onClick={
+                            () => {
+                                toggleFavorite();
+                                dispatch({
+                                    type: "REMOVE_ARTICLE",
+                                    payload: article
+                                });
+                            }
+                        } />
+                        : <AiOutlineHeart size={20} className="hover:cursor-pointer" onClick={() => {
+
+                            toggleFavorite();
+                            dispatch({
+                                type: "SAVE_ARTICLE",
+                                payload: article
+                            });
+                        }
+                        } />
                 }
             </div>
             <div>

@@ -1,6 +1,4 @@
-import Header from "./Header";
 import MainArticle from "./MainArticle";
-import bg from "../img/news.jpg";
 import OtherArticles from "./OtherArticles";
 
 const MainContainer = () => {

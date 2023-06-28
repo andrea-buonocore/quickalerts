@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { useDispatch } from "react-redux";
 
 const MainArticle = () => {
 
     const [article, setArticle] = useState(null);
     const [favorite, setFavorite] = useState(false);
+    const dispatch = useDispatch();
 
     const getMainArticle = async () => {
         try {
@@ -39,16 +41,32 @@ const MainArticle = () => {
                         <div className="absolute top-2 right-2 bg-white p-3 rounded-full">
                             {
                                 favorite ?
-                                    <AiFillHeart size={20} className="hover:cursor-pointer" onClick={toggleFavorite} />
-                                    : <AiOutlineHeart size={20} className="hover:cursor-pointer" onClick={toggleFavorite} />
+                                    <AiFillHeart size={20} className="hover:cursor-pointer" onClick={
+                                        () => {
+                                            toggleFavorite();
+                                            dispatch({
+                                                type: "REMOVE_ARTICLE",
+                                                payload: article
+                                            });
+                                        }
+                                    } />
+                                    : <AiOutlineHeart size={20} className="hover:cursor-pointer" onClick={() => {
+
+                                        toggleFavorite();
+                                        dispatch({
+                                            type: "SAVE_ARTICLE",
+                                            payload: article
+                                        });
+                                    }
+                                    } />
                             }
                         </div>
                         <img src={article.urlToImage} alt="Article Image" className="w-full object-cover" />
                         <div className="p-3">
                             <a href={article.url} target="_blank" rel="noreferrer">
                                 <h2 className="font-semibold text-xl mb-4">{article.title}</h2>
+                                <p className="font-light text-xs">{article.description}</p>
                             </a>
-                            <p className="font-light text-xs">{article.description}</p>
                         </div>
                     </div>
                 )

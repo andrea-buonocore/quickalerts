@@ -6,7 +6,6 @@ const OtherArticles = () => {
 
     const [articles, setArticles] = useState(null);
 
-
     const getArticles = async () => {
         try {
             let response = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=87f6838779694951b71c56e201cdd0a3');
