@@ -13,7 +13,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<MainContainer />} />
-          <Route path="/article" element={<Article />} />
+          <Route path="/article/:url" element={<Article />} />
           <Route path="/saved" element={<SavedArticles />} />
           <Route path="/category" element={<Category />} />
           <Route path="/lang" element={<Lang />} />

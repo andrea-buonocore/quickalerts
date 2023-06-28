@@ -18,7 +18,7 @@ const Header = () => {
                 <span className="font-semibold text-2xl">QuickAlerts</span>
             </Link>
             <AiOutlineMenu size={20} className="cursor-pointer" onClick={handleNav} />
-            <nav className={nav ? "fixed top-0 right-0 bg-white border w-[70%] lg:w-[30%] h-screen z-10 transition-all duration-500" : "fixed top-0 right-[-100%] bg-white border w-[70%] lg:w-[30%] h-screen p-10 z-10 transition-all duration-500"}>
+            <nav className={nav ? "fixed top-0 right-0 bg-white border w-[70%] lg:w-[20%] h-screen z-10 transition-all duration-500" : "fixed top-0 right-[-100%] bg-white border w-[70%] lg:w-[20%] h-screen p-10 z-10 transition-all duration-500"}>
                 <div className="flex justify-end items-center mb-5 p-10">
                     <AiOutlineClose size={20} className="cursor-pointer" onClick={handleNav} />
                 </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { AiOutlineHeart } from "react-icons/ai";
 
 const MainArticle = () => {
 
@@ -28,21 +28,22 @@ const MainArticle = () => {
 
 
     return (
-        <div className="w-full relative p-10">
+        <div className="w-full p-10">
             {
                 article && (
-                    <Link>
-                        <div className="shadow rounded-xl overflow-hidden">
+                    <div className="shadow rounded-xl overflow-hidden relative">
+                        <div className="absolute top-2 right-2 bg-white p-3 rounded-full"><AiOutlineHeart size={20} className="hover:cursor-pointer"/></div>
                             <img src={article.urlToImage} alt="Article Image" className="w-full object-cover" />
                             <div className="p-3">
+                        <a href={article.url} target="_blank" rel="noreferrer">
                                 <h2 className="font-semibold text-xl mb-4">{article.title}</h2>
-                                <p className="font-light text-xs">{article.description}</p>
-                            </div>
-                        </div>
-                    </Link>
-                )
-            }
-        </div>
+                        </a>
+                        <p className="font-light text-xs">{article.description}</p>
+                    </div>
+                    </div>
+    )
+}
+        </div >
     )
 }
 
