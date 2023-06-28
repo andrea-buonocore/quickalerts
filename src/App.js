@@ -2,10 +2,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import MainContainer from "./components/MainContainer";
 import SavedArticles from "./components/SavedArticles";
-import Category from "./components/Category";
 import Lang from "./components/Lang";
 import { Provider } from "react-redux";
 import store from "./redux/store"
+import Settings from "./components/Settings";
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<MainContainer />} />
             <Route path="/saved" element={<SavedArticles />} />
-            <Route path="/category" element={<Category />} />
+            <Route path="/settings" element={<Settings />} />
             <Route path="/lang" element={<Lang />} />
           </Routes>
         </BrowserRouter>

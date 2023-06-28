@@ -1,9 +1,6 @@
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineSetting, AiOutlineClose, AiFillSetting } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { AiOutlineHeart } from "react-icons/ai";
-import { GrLanguage } from "react-icons/gr";
-import { BiCategoryAlt } from "react-icons/bi";
-import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 
 const Header = () => {
@@ -28,16 +25,10 @@ const Header = () => {
                         <span className="text-black z-10">Saved</span>
                     </div>
                 </Link>
-                <Link to={'/category'} onClick={handleNav}>
+                <Link to={'/settings'} onClick={handleNav}>
                     <div className="flex items-center py-10 border flex items-center justify-center">
-                        <BiCategoryAlt size={20} className="mr-3" />
-                        <span className="text-black z-10">Change Category</span>
-                    </div>
-                </Link>
-                <Link to={'/lang'} onClick={handleNav}>
-                    <div className="flex items-center py-10 border flex items-center justify-center">
-                        <GrLanguage size={20} className="mr-3" />
-                        <span className="text-black z-10">Change Language</span>
+                        <AiOutlineSetting size={20} className="mr-3" />
+                        <span className="text-black z-10">Settings</span>
                     </div>
                 </Link>
             </nav>

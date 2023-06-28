@@ -8,10 +8,12 @@ const MainArticle = () => {
     const [favorite, setFavorite] = useState(false);
     const dispatch = useDispatch();
     const savedArticles = useSelector(state => state.saveArticle.saved);
+    const category = useSelector(state => state.category.category);
+    const country = useSelector(state => state.country.country);
 
     const getMainArticle = async () => {
         try {
-            let response = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=87f6838779694951b71c56e201cdd0a3');
+            let response = await fetch(`https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=87f6838779694951b71c56e201cdd0a3`);
             if (response.ok) {
                 let data = await response.json();
                 setArticle(data.articles[0]);
