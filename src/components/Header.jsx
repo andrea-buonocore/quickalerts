@@ -1,4 +1,4 @@
-import { AiOutlineMenu, AiOutlineSetting, AiOutlineClose, AiFillSetting } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineSetting, AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useState } from "react";
@@ -11,7 +11,7 @@ const Header = () => {
 
     return (
         <div className="flex justify-between items-center p-10 bg-transparent relative">
-            <Link to={'/'}>
+            <Link to={'/home'}>
                 <span className="font-semibold text-2xl">QuickAlerts</span>
             </Link>
             <AiOutlineMenu size={20} className="cursor-pointer" onClick={handleNav} />
