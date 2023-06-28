@@ -6,7 +6,7 @@ const Article = ({ article }) => {
 
     const [favorite, setFavorite] = useState(false);
     const dispatch = useDispatch();
-    const selector = useSelector(state => state.saveArticle.saved);
+    const savedArticles = useSelector(state => state.saveArticle.saved);
 
     const toggleFavorite = () => { setFavorite(!favorite) };
 
@@ -14,8 +14,8 @@ const Article = ({ article }) => {
         <div className="border rounded shadow mb-4 w-full grid grid-cols-3 relative">
             <div className="absolute top-0 right-0 bg-white p-2 rounded-full">
                 {
-                    favorite ?
-                        <AiFillHeart size={20} className="hover:cursor-pointer" onClick={
+                    savedArticles.some(singleArticle => singleArticle.url === article.url) ?
+                        <AiFillHeart size={20} className="hover:cursor-pointer text-red-800" onClick={
                             () => {
                                 toggleFavorite();
                                 dispatch({
@@ -36,7 +36,7 @@ const Article = ({ article }) => {
                 }
             </div>
             <div>
-                <img src={article.urlToImage} alt="article image" className="w-full h-full object-cover" />
+                <img src={article.urlToImage} alt="article" className="w-full h-full object-cover" />
             </div>
 
             <div className="p-3 flex items-center col-span-2">

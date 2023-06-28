@@ -8,14 +8,12 @@ const MainArticle = () => {
     const [favorite, setFavorite] = useState(false);
     const dispatch = useDispatch();
     const savedArticles = useSelector(state => state.saveArticle.saved);
-    console.log("saved articles", savedArticles)
 
     const getMainArticle = async () => {
         try {
             let response = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=87f6838779694951b71c56e201cdd0a3');
             if (response.ok) {
                 let data = await response.json();
-                console.log(data.articles);
                 setArticle(data.articles[0]);
             }
             else return new Error(response.statusText);
@@ -44,7 +42,7 @@ const MainArticle = () => {
                             {
                                 savedArticles.some(singleArticle => singleArticle.url === article.url)
                                     ?
-                                    <AiFillHeart size={20} className="hover:cursor-pointer" onClick={
+                                    <AiFillHeart size={20} className="hover:cursor-pointer text-red-800" onClick={
                                         () => {
                                             toggleFavorite();
                                             dispatch({
