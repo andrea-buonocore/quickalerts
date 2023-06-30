@@ -12,6 +12,37 @@ const MainArticle = () => {
     const savedArticles = useSelector(state => state.saveArticle.saved);
     const category = useSelector(state => state.category.category);
     const country = useSelector(state => state.country.country);
+    
+    let flag;
+
+    switch (country) {
+        case "us":
+            flag = "🇺🇸";
+            break;
+        case "it":
+            flag = "🇮🇹";
+            break;
+        case "fr":
+            flag = "🇫🇷";
+            break;
+        case "ci":
+            flag = "🇨🇳";
+            break;
+        case "de":
+            flag = "🇩🇪";
+            break;
+        case "gb":
+            flag = "🇬🇧";
+            break;
+        case "jp":
+            flag = "🇯🇵";
+            break;
+
+
+        default:
+            flag = "";
+    }
+
 
     const getMainArticle = async () => {
         try {
@@ -40,7 +71,7 @@ const MainArticle = () => {
 
     return (
         <div className="w-full p-10 dark:bg-gray-900 dark:text-gray-100">
-            <h2 className="mb-4 font-semibold text-xl">Breaking News!</h2>
+            <h2 className="font-semibold text-xl mb-4">{category.charAt(0).toUpperCase() + category.slice(1)} News In {flag}</h2>
             {
                 isLoading && <Spinner />
             }

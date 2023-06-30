@@ -11,7 +11,7 @@ const Article = ({ article }) => {
     const toggleFavorite = () => { setFavorite(!favorite) };
 
     return (
-        <div className="border shadow mb-4 w-full grid grid-cols-3 relative overflow-hidden rounded-xl">
+        <div className="border dark:border-none shadow mb-4 w-full grid grid-cols-3 relative overflow-hidden rounded-xl">
             <div className="absolute top-2 right-2 bg-white p-2 rounded-full">
                 {
                     savedArticles.some(singleArticle => singleArticle.url === article.url) ?

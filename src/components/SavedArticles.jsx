@@ -20,14 +20,13 @@ const SavedArticles = () => {
                         articles.map((article, i) => {
                             return (
                                 <div className="flex" key={i}>
-                                    <div className="border rounded shadow mb-4 w-full grid grid-cols-3 overflow-hidden col-span-3">
-                                        <div className="absolute top-0 right-0 bg-white p-2 rounded-full">
-                                        </div>
+                                    <div className="border dark:border-none rounded-lg shadow mb-4 w-full grid grid-cols-3 overflow-hidden col-span-3">
+
                                         <div>
-                                            <img src={article.urlToImage} alt="article" className="h-full w-full  object-cover" />
+                                            <img src={article.urlToImage} alt="article" className="w-full h-[120px] lg:h-[150px] object-cover" />
                                         </div>
 
-                                        <div className="p-3 flex items-center col-span-2">
+                                        <div className="p-3 flex items-center col-span-2 dark:bg-gray-700">
                                             <a href={article.url} target="_blank" rel="noreferrer">
                                                 <h3 className="font-semibold mb-2 text-sm">{article.title}</h3>
                                             </a>
