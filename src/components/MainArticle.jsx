@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
+import Spinner from "./Spinner";
 
 const MainArticle = () => {
 
     const [article, setArticle] = useState(null);
     const [favorite, setFavorite] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const dispatch = useDispatch();
     const savedArticles = useSelector(state => state.saveArticle.saved);
     const category = useSelector(state => state.category.category);
@@ -17,12 +19,14 @@ const MainArticle = () => {
             if (response.ok) {
                 let data = await response.json();
                 setArticle(data.articles[0]);
+                setIsLoading(false);
             }
-            else return new Error(response.statusText);
+            else return new Error(response.statusText); setIsLoading(false);
 
         }
         catch (e) {
             console.log(e);
+            setIsLoading(false);
         }
 
     }
@@ -37,6 +41,9 @@ const MainArticle = () => {
     return (
         <div className="w-full p-10">
             <h2 className="mb-4 font-semibold text-xl">Breaking News!</h2>
+            {
+                isLoading && <Spinner />
+            }
             {
                 article && (
                     <div className="shadow rounded-xl overflow-hidden relative">
