@@ -10,12 +10,12 @@ const Header = () => {
     const handleNav = () => { setNav(!nav) };
 
     return (
-        <header className="flex justify-between items-center p-10 relative dark:bg-gray-800 dark:text-gray-100">
+        <header className="flex justify-between items-center px-10 py-5 relative dark:bg-gray-900 dark:text-gray-100">
             <Link to={'/home'}>
                 <span className="font-semibold text-3xl">QuickAlerts</span>
             </Link>
             <AiOutlineMenu size={20} className="cursor-pointer" onClick={handleNav} />
-            <nav className={nav ? "fixed top-0 right-0 w-[70%] lg:w-[20%] bg-white dark:bg-gray-900 border dark:border-none h-screen z-10 transition-all duration-500 flex flex-col justify-center" : "fixed top-0 right-[-100%] border dark:border-none bg-white dark:bg-gray-700 w-[70%] lg:w-[20%] h-screen p-10 z-10 transition-all duration-500 flex flex-col justify-center"}>
+            <nav className={nav ? "fixed top-0 right-0 w-[70%] lg:w-[20%] bg-white dark:bg-gray-600 shadow h-screen z-10 transition-all duration-500 flex flex-col justify-center" : "fixed top-0 right-[-100%] border dark:border-none bg-white dark:bg-gray-600 w-[70%] lg:w-[20%] h-screen p-10 z-10 transition-all duration-500 flex flex-col justify-center"}>
                 <div className="absolute top-0 right-0 mb-5 p-10">
                     <AiOutlineClose size={20} className="cursor-pointer" onClick={handleNav} />
                 </div>

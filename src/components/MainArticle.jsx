@@ -18,7 +18,7 @@ const MainArticle = () => {
             let response = await fetch(`https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=87f6838779694951b71c56e201cdd0a3`);
             if (response.ok) {
                 let data = await response.json();
-                setArticle(data.articles[0]);
+                setArticle(data.articles.find(article => article.urlToImage !== null));
                 setIsLoading(false);
             }
             else return new Error(response.statusText); setIsLoading(false);
@@ -39,7 +39,7 @@ const MainArticle = () => {
 
 
     return (
-        <div className="w-full p-10">
+        <div className="w-full p-10 dark:bg-gray-900 dark:text-gray-100">
             <h2 className="mb-4 font-semibold text-xl">Breaking News!</h2>
             {
                 isLoading && <Spinner />
@@ -60,7 +60,7 @@ const MainArticle = () => {
                                             });
                                         }
                                     } />
-                                    : <AiOutlineHeart size={20} className="hover:cursor-pointer" onClick={() => {
+                                    : <AiOutlineHeart size={20} className="hover:cursor-pointer text-gray-900" onClick={() => {
 
                                         toggleFavorite();
                                         dispatch({
@@ -72,7 +72,7 @@ const MainArticle = () => {
                             }
                         </div>
                         <img src={article.urlToImage} alt="Article" className="w-full object-cover" />
-                        <div className="p-3">
+                        <div className="p-3 dark:bg-gray-700">
                             <a href={article.url} target="_blank" rel="noreferrer">
                                 <h2 className="font-semibold text-xl mb-4">{article.title}</h2>
                                 <p className="font-light text-xs">{article.description}</p>

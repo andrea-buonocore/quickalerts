@@ -31,7 +31,7 @@ const MainContainer = () => {
         case "jp":
             flag = "🇯🇵";
             break;
-            
+
 
         default:
             flag = "";
@@ -40,10 +40,10 @@ const MainContainer = () => {
     return (
         <>
             <Header />
-            <div className="p-10">
-                <h2 className="font-semibold text-3xl text-center">{category.charAt(0).toUpperCase() + category.slice(1)} News In {flag}</h2>
-            </div>
-            <div className="grid sm:grid-cols-1 lg:grid-cols-2 h-screen dark:bg-gray-800 dark:text-gray-100">
+
+            {/* <h2 className="font-semibold text-3xl text-center">{category.charAt(0).toUpperCase() + category.slice(1)} News In {flag}</h2> */}
+
+            <div className="grid sm:grid-cols-1 lg:grid-cols-2 h-screen dark:bg-gray-900 dark:text-gray-100">
                 <MainArticle />
                 <OtherArticles />
             </div>

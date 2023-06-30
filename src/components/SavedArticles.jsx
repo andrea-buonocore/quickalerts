@@ -10,7 +10,7 @@ const SavedArticles = () => {
     return (
         <>
             <Header />
-            <div className="p-10 dark:bg-gray-800 dark:text-gray-100 h-screen">
+            <div className="p-10 dark:bg-gray-900 dark:text-gray-100 h-screen">
                 {
                     articles.length ? <h2 className="font-semibold text-xl mb-4">Recently Saved Articles</h2> : <h2 className="font-semibold text-xl mb-4">You haven't added any articles to your favorites yet</h2>
                 }
